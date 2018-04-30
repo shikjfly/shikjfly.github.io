@@ -1,0 +1,59 @@
+#wrapper{
+	width: 480px;
+	padding: 10px;
+}
+
+nav{
+	height: 40px;
+	line-height: 40px;	
+	border: none;
+}
+nav>a:first-child{
+	width: 110px;
+}
+nav>a:nth-child(2){
+	width: 110px;
+}
+nav ul{
+	width: 240px;
+}
+nav ul>li a{
+	width: 55px;
+}
+/*end 导航*/
+
+#banner{
+	width: 480px;
+}
+#banner img{
+	width: 1240px;
+	top: -2%;
+	right: 2%;
+}
+#banner img:hover{
+	width: 760px;
+}
+
+/*end 轮播图*/
+
+#main .content{
+	width: 480px;
+}
+
+#main .content article{
+	margin: 10px;
+}
+/*end 主*/
+
+#main .serach{
+	display: none;
+}
+/*end search搜索*/
+
+
+#footer{
+	width: 480px;
+	height: 35px;
+	line-height: 35px;
+}
+/*end footer*/
