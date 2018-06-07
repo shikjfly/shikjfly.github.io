@@ -1,6 +1,6 @@
 ### 页面说明
 0. 引言篇
-> 本来小白一枚，目的是熟悉markdown编写语法，及提高逻辑能力，锻炼HTML5、CSS3和JavaScript而来，同时熟知GitHub和Git，**从而为一个静态网页（ http://shikjfly.github.io/ ）的诞生而努力**  
+> 小白一枚，目的是熟悉markdown编写语法，及提高逻辑能力，锻炼HTML5、CSS3和JavaScript而来，同时熟知GitHub和Git，**从而为一个静态网页（ http://shikjfly.github.io/ ）的诞生而努力**  
 
 1. 需求篇
 > 个人页面需求说明针对自己的想法：
