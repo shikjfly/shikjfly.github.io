@@ -31,12 +31,12 @@ nav ul>li a{
 	width: 100px;
 }
 nav ul>li:nth-child(1){
-	font-size: 18px;
-	font-weight: 700;
-	background: black;
+	/*font-size: 18px;*/
+	/*font-weight: 700;*/
+	/*background: black;*/
 }
 nav ul>li:nth-child(1) a{
-	color: white;
+	/*color: white;*/
 }
 nav ul>li a:hover{
 	background: black;
@@ -165,7 +165,7 @@ nav>a:nth-child(2){
 #main .serach{
 	width: 220px;
 	float: right;
-	height: 480px;
+	height: 730px;
 	border: 1px solid lightgrey;
 	box-sizing: border-box;
 	padding: 10px;
@@ -197,4 +197,88 @@ nav>a:nth-child(2){
 	font-size: 12px;
 	line-height: 45px;
 	text-align: center;
+	clear: both;
+}
+
+
+/*--------H5Game---------------*/
+
+#h5Game article{
+	display: inline-block;
+	box-sizing: border-box;
+	width: 460px;
+	height: 460px;
+	overflow: hidden;
+	border: 1px solid lightgrey;
+	margin: 10px 0;
+	padding: 10px;
+	float: right;
+	position: relative;
+}
+#h5Game  .left{
+	float: left;
+}
+
+#h5Game header h1{
+	font-size: 1.5em;
+}
+#h5Game header div{
+	margin: 10px 0 5px;
+	font-size: 12px;
+}
+#h5Game header div span{
+	margin-right: 12px;
+}
+#h5Game main{
+	height: 350px;
+}
+#h5Game main p{
+	text-indent: 20px;
+	font-size: 16px;
+	line-height: 20px;
+}
+#h5Game main a {
+	display: block;
+	width: 440px;
+	height: 280px;
+	line-height: 280px;
+	overflow: hidden;
+	border: 1px solid lightgrey;
+	position: absolute;
+	top: 125px;
+	box-shadow: 1px 1px 5px lightgrey; 
+}
+#h5Game main a img{
+	width: 100%;
+	vertical-align: middle;
+
+}
+
+#h5Game main a img:hover{
+	/*width: 200%;*/
+	/*zoom: 2;*/
+	transform: scale(5);
+	transition: 5s;
+}
+
+#h5Game footer{
+	/*border: 1px solid red;*/
+	text-align: center;
+}
+#h5Game footer a {
+	display: inline-block;
+	background: #A5D16D;
+	/*border: 1px solid blue;*/
+	border-radius: 4px;
+	padding: 10px;
+	margin: 0px 15px;
+	font-size: 18px;
+	color: white;
+	font-weight: 700;
+	box-shadow: 2px 2px 5px lightgrey; 
+
+
+}
+#h5Game footer a:nth-child(2){
+	background: #93D0ED;
 }
