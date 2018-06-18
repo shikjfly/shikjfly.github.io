@@ -76,4 +76,4 @@
 
 > 登录效果的动态原型界面
 
-<iframe src="https://shikjfly.github.io/assets/img/%E5%8E%9F%E5%9E%8B_20170619_login.gif"></iframe>
+[动态登录页面](https://shikjfly.github.io/assets/img/%E5%8E%9F%E5%9E%8B_20170619_login.gif){:target="_blank"}  
