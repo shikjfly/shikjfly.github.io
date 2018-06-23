@@ -19,11 +19,13 @@ window.onload = function(){
 		
 		login_submit.addEventListener("click",showAuthor,true);
 		function showAuthor(){
-			if ( (username.value == "admin") && (password.value == 123) ) {				
+			if ( (username.value == "shikjfly") && (password.value == 123) ) {				
 				login_link.style.display = "none";
 				login_submit.style.display = "none";
 				login_form.style.display = "none";
 				authorized.style.display = "block";
+			}else{
+				alert("请输入正确的用户名和密码，密码和用户名是提示框里面的")
 			}
 		}
 
