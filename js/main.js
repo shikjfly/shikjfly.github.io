@@ -1,4 +1,4 @@
-window.onload = function(){
+// window.onload = function(){
 
 	var username = document.getElementById('username'),
 		password = document.getElementById('password'),
@@ -38,4 +38,4 @@ window.onload = function(){
 		}
 
 
-}
+// }
