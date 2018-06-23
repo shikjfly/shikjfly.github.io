@@ -14,24 +14,48 @@
 <body>
 	<div id="wrapper">
 		<!-- 全局顶部导航栏 -->
-		<nav>
-			<!-- 左上方logo -->
-			<a href="#">logo</a>
-			<!-- 右上角登录信息 -->
-			<a href="#">
-				<svg class="icon" aria-hidden="true">
-					<use xlink:href="#icon-head"></use>
-				</svg>shikjfly
-			</a>
-			<!-- 导航内容 -->
-			<ul>
-				<li><a href="index.html">首页</a></li>
-				<li><a href="h5game.html">H5游戏</a></li>
-				<li><a href="#">V2.0</a></li>
-				<li><a href="#">V3.0</a></li>
-			</ul>
-		</nav>
-		<!-- end nav -->
+		<header>
+			<nav>
+				<ul>
+					 <!-- 左上方logo -->
+					<li id="logo">	<a href="#">logo</a></li>
+					 <!-- 右上方登录 -->
+					<li id="login">
+						<div id="authorized">														
+							<svg class="icon authorized-icon" aria-hidden="true"><use xlink:href="#icon-head"></use></svg>
+							<span id="user-authorized">shikjfly</span>
+							<br/>
+							<a id="profile-link" href="javascript:void(0);">个人信息</a> | <a id="logout-link" href="javascript:void(0);">注销</a>
+						</div>
+
+						<form id="login-form">
+							<svg class="icon" aria-hidden="true"><use xlink:href="#icon-heads"></use></svg>
+							<input id="username" name="username" type="text" placeholder="shikjfly" autocomplete="off" />
+							&nbsp; 	<svg class="icon" aria-hidden="true"><use xlink:href="#icon-mima"></use></svg>
+							<input id="password" name="password" type="password" placeholder="123"/>
+						</form>
+						<a id="login-submit" href="javascript:void(0)">
+							登录 &nbsp;<svg class="icon" aria-hidden="true"><use xlink:href="#icon-login1"></use></svg>
+						</a>
+
+						<div id="login-link" class="show-form">
+							登录 &nbsp;<svg class="icon" aria-hidden="true"><use xlink:href="#icon-login1"></use></svg>
+						</div>
+					</li>				
+					<!-- 导航内容 -->
+					<li id="top-menu-items">
+						<ul>
+							<li><a href="index.html">首页</a></li>
+							<li><a href="h5game.html">H5游戏</a></li>
+							<li><a href="#">V2.0</a></li>
+							<li><a href="#">V3.0</a></li>
+						</ul>						
+					</li>
+				</ul>
+			</nav>
+			<!-- end nav -->
+		</header>
+		<!-- end header -->
 
 		<div id="h5Game">
 			<!--1、绘制棋盘 -->
@@ -196,6 +220,7 @@
 		<!-- end #footer -->
 	</div>
 	<!-- 在线引用阿里Symbol图标 -->
-	<script src="https://at.alicdn.com/t/font_587077_drm4k3iqov0io1or.js"></script>
+	<script src="https://at.alicdn.com/t/font_587077_5free0h5z5q.js"></script>
+	<script type="text/javascript" src="js/main.js"></script>
 	</body>
 </html>
