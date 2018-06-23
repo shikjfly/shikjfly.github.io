@@ -22,7 +22,7 @@ header nav{
 
 #logo{
 	float: left;
-	margin: 0px 100px;
+	margin: 0px 70px;
 }
 #top-menu-items ul li{
 	float: left;
@@ -36,7 +36,6 @@ header nav{
 	color: white;
 	font-size: 16px;
 }
-
 #login{
 	float: right;
 }
@@ -106,7 +105,7 @@ header nav{
 #login-link{
 	font-size: 14px;
 	margin-right: 10px;
-
+	cursor: pointer;
 }
 
 /*end nav导航*/
@@ -287,7 +286,7 @@ header nav{
 	height: 350px;
 }
 #h5Game main p{
-	text-indent: 20px;
+	/*text-indent: 20px;*/
 	font-size: 16px;
 	line-height: 20px;
 }
