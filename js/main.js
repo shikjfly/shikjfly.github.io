@@ -132,33 +132,58 @@ window.onload = function(){
 
 		var statesList = document.getElementById('state');
 		var counriesList = document.getElementById('counriesList');
-
-		function loadData(dataUrl, target) {
+		// html格式的方式
+		function loadDataHtml(dataUrl, target) {
 			var xhr = new XMLHttpRequest();
 			xhr.open('GET', dataUrl, true);
 			xhr.onreadystatechange = function() {
 				if (xhr.readyState == 4) {
 					if ((xhr.status >= 200 && xhr.status < 300) || xhr.status === 304) {
+						// +=再原有的基础上再新增
 						target.innerHTML += xhr.responseText;
 					} else {
 						console.log(xhr.statusText);
-						
-						// Show the error on the Web page
-                        tempContainer.innerHTML += '<p class="error">Error getting ' + 
-                                      target.name + ": "+ xhr.statusText + ",code: "+ xhr.status + "</p>";
    					}
 				}
 			}
 			xhr.send();
 		}
 
-		// Load the countries and states using XHR
-		loadData('data/states.html', statesList);
-		//loadData('data/countries.html', counriesList);
+		// json格式的方式
+		function loadDataJson(dataUrl, rootElement, target) {
+			var xhr = new XMLHttpRequest();
+			xhr.overrideMimeType("application/json");
+			xhr.open('GET', dataUrl, true);
 
-		//test error - set the wrong url
-		loadData('data/countries.html', counriesList);
+			xhr.onreadystatechange = function() {
+				if (xhr.readyState == 4) {
+					if (xhr.status == 200) {
+						
+						//利用parse进行数据切分
+						var jsonData = JSON.parse(xhr.responseText);
+						
+						var optionsHTML = ''
+						for(var i= 0; i < jsonData[rootElement].length; i++){
+							optionsHTML+='<option value="'+jsonData[rootElement][i].name+'">'+jsonData[rootElement][i].name+'</option>'
+						}
+						
+						var targetCurrentHtml = target.innerHTML;
+						target.innerHTML = targetCurrentHtml + optionsHTML;
+						
+					} else {
+						console.log(xhr.statusText);
+					}
+				}
+			}
+			xhr.send();
+		}
 
+
+		
+		// 国家用html格式
+		loadDataHtml('data/countries.html', counriesList);
+		// 省份用Json格式
+		loadDataJson('data/states.json', 'stateslist', statesList);
 	})();
 
 
