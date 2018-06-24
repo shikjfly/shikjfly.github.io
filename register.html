@@ -1,0 +1,182 @@
+<!-- 文档类型 -->
+<!DOCTYPE html>
+<!-- 语言属性、zh-CN -->
+<html class="no-js" lang="zh-CN">
+<head>
+	<meta charset="UTF-8">
+	<title>个人主页</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+
+	<link rel="stylesheet" type="text/css" href="assets/css/reset.css">
+	<link rel="stylesheet" type="text/css" href="assets/css/main.css">
+	<!-- <link rel="stylesheet" media="(max-width: 768px)" href="assets/css/phone.css"> -->
+    <script type="text/javascript" src="http://api.map.baidu.com/api?v=2.0&ak=gtWs9eeNGjWdGefOo4GGcepL0YVGvtFa"></script>
+    <script type="text/javascript" src="http://api.map.baidu.com/api?v=2.0&ak=	F41bed5ad415981d0a0c8ba802cb9417"></script>
+
+	<style type="text/css">
+
+	</style>
+</head>
+<body>
+	<div id="wrapper">
+		<!-- 全局顶部导航栏 -->
+		<header>
+			<nav>
+				<ul>
+					 <!-- 左上方logo -->
+					<li id="logo">	<a href="#">logo</a></li>
+					 <!-- 右上方登录 -->
+					<li id="login">
+						<div id="authorized">														
+							<svg class="icon authorized-icon" aria-hidden="true"><use xlink:href="#icon-head"></use></svg>
+							<span id="user-authorized">shikjfly</span>
+							<br/>
+							<a id="profile-link" href="javascript:void(0);">个人信息</a> | <a id="logout-link" href="javascript:void(0);">注销</a>
+						</div>
+
+						<form id="login-form">
+							<svg class="icon" aria-hidden="true"><use xlink:href="#icon-heads"></use></svg>
+							<input id="username" name="username" type="text" placeholder="shikjfly" autocomplete="off" />
+							&nbsp; 	<svg class="icon" aria-hidden="true"><use xlink:href="#icon-mima"></use></svg>
+							<input id="password" name="password" type="password" placeholder="123"/>
+						</form>
+						<a id="login-submit" href="javascript:void(0)">
+							登录 &nbsp;<svg class="icon" aria-hidden="true"><use xlink:href="#icon-login1"></use></svg>
+						</a>
+
+						<div id="login-link">
+							登录 &nbsp;<svg class="icon login-icon" aria-hidden="true"><use xlink:href="#icon-login1"></use></svg>
+						</div>
+
+						<div id="register">
+							| &nbsp; <a href="">注册</a>
+						</div>
+					</li>				
+					<!-- 导航内容 -->
+					<li id="top-menu-items">
+						<ul>
+							<li><a href="index.html">首页</a></li>
+							<li><a href="h5game.html">H5游戏</a></li>
+							<li><a href="#">V2.0</a></li>
+							<li><a href="#">V3.0</a></li>
+						</ul>						
+					</li>
+				</ul>
+			</nav>
+			<!-- end nav -->
+		</header>
+
+		<section id="register_container">
+			<section id="main-top-section">
+				<div id="donation-address">
+					<p class="donation-address">
+						Lorem ipsum dolor sit amet, consectetur e magna aliqua.
+						Nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+						Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
+						Excepteur sint occaecat cupidatat non proident.
+					</p>
+					<button class="donate-button" id="donate-botton">
+						<span class="donate-botton-header">打赏吧</span>
+						<br/>
+						<span class="donate-2nd-line">群主穷的揭不开锅了</span>
+					</button>
+				</div>
+
+				<div id="donate-form-container">
+					<h3>现在打赏!!!</h3>
+
+					<form name="_xclick" action="https://www.paypal.com/cgi-bin/webscr" method="post">
+						<input type="hidden" name="cmd" value="_xclick">
+						<input type="hidden" name="business" value="email-registered-in-paypal@site-url.com">
+						<input type="hidden" name="item_name" value="Donation">
+						<input type="hidden" name="currency_code" value="USD">
+						<div class="donation-form-section">
+							<label class="donation-heading">请选择或输入<br/>打赏金额</label>
+							<br>
+							<input type="radio"	name = "amount"	id=  "d10" value = "10"/>
+							<label for = "d10">10</label>
+							<br/>
+							<input type="radio"	name = "amount"	id = "d20"	value="20" />
+							<label for = "d20">20</label>
+							<br/>
+							<input type="radio"	name = "amount"	id="d50"  checked="checked"	value="50" />
+							<label for="d50">50</label>
+							<br/>
+							<input type="radio"	name = "amount"	id="d100" value="100" />
+							<label for="d100">100</label>
+							<br/>
+							<input type="radio"	name = "amount"	id="d200" value="200" />
+							<label for="d200">200</label>
+							<br>
+							<br>
+							<label class="donation-heading">其它金额</label>
+							<br>
+							<input id="customAmount" name="amount" value="" type="text"  autocomplete="off" />
+						</div>
+						<div class="donation-form-section">
+							<label class="donation-heading">打赏者信息</label>
+							<br>
+							<input type="text" id="full_name" name="full_name" placeholder="名字 *" required>
+							<input type="email" id="email_addr" name="email_addr" placeholder="邮箱 *" required>
+							<input type="text" id="street_address" name="street_address" placeholder="地址">
+							<input type="text" id="city" name="scty" placeholder="城市">
+							<input type="text" id="zip" name="zip" placeholder="邮政编码">
+							<select name="state" id="state">
+								<option value="" selected="selected"> - 省份 - </option>
+							</select>
+							<br>
+
+							<select name="country" id="counriesList">
+								<option value="" selected="selected"> - 国家 - </option>
+							</select>
+						</div>
+						<div class="donation-form-section make-payment">
+							<h4 class="donation-heading">点击支付</h4>
+							<p>
+								您的付款支付将通过第三方信用平台<b>支付宝</b>，请放心支付，您的个人信息将不会被泄露。
+							</p>
+
+							<button class="donate-button donate-button-submit">
+								<span class="donate-botton-header">立即打赏</span>
+								<br/>
+								<span class="donate-2nd-line">楼主非常感谢支持</span>
+							</button>
+							<br>
+							<a id="donate-later-link" href="javascript:void(0);">
+								稍后再说吧 <svg class="icon" aria-hidden="true"><use xlink:href="#icon-guanbi"></use></svg></a>
+						</div>
+					</form>
+				</div>
+			</section>
+			<!-- end .打赏部分 -->
+
+			<hr class="clearfix">
+			<section id="main-bottom-section">
+				<div id="video-container">
+					<video controls poster="assets/media/intro.jpg" width="390px" height="240" preload="metadata">
+						<source src="assets/media/intro.mp4" type="video/mp4">
+						<source src="assets/media/intro.webm" type="video/webm">
+						<p>对不起，你的浏览器不支持video属性</p>
+					</video>
+					<h3>请点击视频<a href="javascript:void(0);">更多</a></h3>
+				</div>
+
+				<div id="map-container">
+					<div id="location-map">地图正在努力加载中ing</div>
+					<div id="location-ui"></div>
+				</div>
+			</section>
+			<!-- end .搜索地图 -->
+		</section>
+		<!-- end #main主区域 -->
+		<footer id="footer">
+			Copyright&copy;2018
+		</footer>
+		<!-- end #footer -->
+	</div>
+
+	<!-- 在线引用阿里Symbol图标 -->
+	<script src="https://at.alicdn.com/t/font_587077_emll0icgpp4.js"></script>
+	<script type="text/javascript" src="js/main.js"></script>
+	<script type="text/javascript" src="js/modernizr-3.5.0.min.js"></script>
+</html>

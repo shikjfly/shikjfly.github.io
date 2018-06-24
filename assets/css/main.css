@@ -1,3 +1,6 @@
+.clearfix{
+	clear: both;
+}
 .icon {
     width: 1em; height: 1em;
     vertical-align: -0.15em;
@@ -102,10 +105,18 @@ header nav{
 }
 
 
-#login-link{
+#login-link, #register{
 	font-size: 14px;
 	margin-right: 10px;
 	cursor: pointer;
+	float: left;
+}
+#login-link, #register a{
+	color: blue;
+}
+.login-icon{
+	position: relative;
+	left: -7px;
 }
 
 /*end nav导航*/
@@ -335,3 +346,121 @@ header nav{
 #h5Game footer a:nth-child(2){
 	background: #93D0ED;
 }
+
+/*-------------------注册捐赠---------------------*/
+
+#donate-form-container{
+	display: none;
+}
+
+#main-top-section{
+	/*height: 300px;	*/
+}
+#donation-address{
+	width: 700px;
+	margin: 0 auto;
+	text-align-last: center;
+}
+#donation-address .donation-address{
+	line-height: 30px;
+}
+.donate-button{
+	padding: 10px 40px;
+	margin: 15px;
+	border-radius: 10px;
+	background: linear-gradient(to bottom , #FEC967 , #FFA700);
+	color: white;
+}
+.donate-botton-header{
+	font-size: 1.5em;
+}
+
+/*-----------*/
+#donate-form-container{
+	display: none;
+}
+#donation-address{
+	display: block;
+}
+.donation-form-section{
+	float: left;
+	width: 250px;
+}
+#donate-form-container input, #donate-form-container select{
+	margin: 5px 0px;
+	width: 150px;
+}
+#donate-form-container input[type=radio]{
+	width: 15px;
+	height: 15px;
+}
+
+#donate-form-container{
+	width: 900px;
+	margin: 20px auto;
+}
+#donate-form-container h3{
+	font-size: 1.5em;
+	margin-bottom: 18px;
+	letter-spacing: 5px;
+}
+#donate-form-container .donation-heading{
+	font-size: .9em;
+	margin-bottom: 18px;
+	letter-spacing: 2px;
+	font-weight: 700;
+}
+.make-payment p{
+	line-height: 22px;
+	color: grey;
+	font-size: 13px;
+}
+.donate-button-submit{
+	margin-left: 0px;
+}
+#donate-later-link{
+	font-size: 13px;
+	color: #6685CC;
+	margin-left: 50px;
+	letter-spacing: 2px;
+}
+
+hr{
+	border: 1px dashed grey;
+}
+#video-container{
+	text-align: center;
+	float: right;
+	margin:10px 0;
+}
+#video-container h3{
+	font-size: 1.2em;
+	font-weight: 700;	
+	margin: 10px;
+}
+#video-container h3 a{
+	color: blue;
+	font-size: .8em;
+	margin-left: 5px;
+}
+
+
+/*-----地图定位-----*/
+#map-container{
+	padding: 10px;
+}
+#location-map{
+	height:240px;
+	width: 390px;
+	text-align: center;
+	line-height: 240px;
+}  
+#location-ui{	
+	height:40px;
+	line-height: 40px;
+	text-align: center;
+	width: 390px;
+	font-size: 1.2em;
+	font-weight: 700;
+}
+
