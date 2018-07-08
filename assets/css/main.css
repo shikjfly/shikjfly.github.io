@@ -425,6 +425,8 @@ header nav{
 	letter-spacing: 2px;
 }
 
+
+/*-----video视频----*/
 hr{
 	border: 1px dashed grey;
 }
@@ -443,24 +445,55 @@ hr{
 	font-size: .8em;
 	margin-left: 5px;
 }
-
+#charts-container h3{
+	font-size: 1.2em;
+	font-weight: 700;	
+	margin: 10px 40px;
+}
+/*--chart画图--*/
+#charts-container h3 a{
+	color: blue;
+	font-size: .8em;
+	margin-left: 5px;
+}
+#canvas{
+	margin-top: 22px;
+}
 
 /*-----地图定位-----*/
 #map-container{
 	padding: 10px;
+	/*border: 1px solid red;*/
+	float: right;
 }
 #location-map{
 	height:240px;
-	width: 390px;
 	text-align: center;
 	line-height: 240px;
 }  
 #location-ui{	
 	height:40px;
-	line-height: 40px;
+	line-height: 45px;
 	text-align: center;
-	width: 390px;
 	font-size: 1.2em;
 	font-weight: 700;
 }
+
+
+
+/*				<div id="video-container">
+					<video controls poster="assets/media/intro.jpg" width="390px" height="240" preload="metadata">
+						<source src="assets/media/intro.mp4" type="video/mp4">
+						<source src="assets/media/intro.webm" type="video/webm">
+						<p>对不起，你的浏览器不支持video属性</p>
+					</video>
+					<h3>请点击视频<a href="javascript:void(0);">更多</a></h3>
+				</div>
+
+		<div id="charts-container">
+					<canvas id="canvas" width="250" height="240">
+						您的浏览器不支持cavas画布
+					</canvas>
+					<h3>各省打赏比例<a href="javascript:void(0);">更多</a></h3>
+				</div>*/
 

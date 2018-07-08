@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+	<meta charset="UTF-8">
+	<title>案例练习</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+	
+	<!-- <script type="text/javascript" src="http://api.map.baidu.com/api?v=2.0&ak=	F41bed5ad415981d0a0c8ba802cb9417"></script> -->
+
+	<script src="http://api.map.baidu.com/api?v=1.4" type="text/javascript"></script>
+	<style type="text/css">
+		#ajax{
+			border: 1px solid red;
+		}
+		#BDmap{
+			border: 1px solid red;
+			height: 400px;
+			padding: 10px;
+		}
+		#output_map{
+			border: 1px solid blue;
+			height: 300px;
+		}
+		#output_word{
+			border: 1px solid black;
+			margin-top: 10px;
+			height: 90px;
+		}
+	</style>
+</head>
+<body>
+
+	<!-- ajax -->
+	<div id="ajax">
+		<div id="div" style="padding: 20px;"></div>
+		<input type="submit" name="" id="submit">
+	</div>
+	<!-- end ajax -->
+
+	<!-- baidaMap -->
+	<div id="BDmap">
+		<div id="output_map"></div>
+		<div id="output_word"></div>
+	</div>
+	<!-- end baidaMap -->
+
+<script type="text/javascript">
+	//---ajax---
+	(function(){
+		function showTxt(){
+			var div = document.getElementById("div");
+			var xhr = new XMLHttpRequest();
+			xhr.open('GET', 'exp_ajax.txt', true);
+
+			xhr.onreadystatechange = function() {
+				if (xhr.readyState == 4) {
+					if (xhr.status == 200) {
+						div.innerHTML = xhr.responseText;
+					} else {
+						console.log(xhr.statusText);
+					}
+				}
+			}
+			xhr.send();
+		}
+		document.getElementById('submit').addEventListener('click', showTxt, true)	
+	})();
+
+	// -- 通用模块 --
+	(function(){
+
+	})();
+	
+	// --地理位置--
+	(function(){
+		var output_map = document.getElementById('output_map');
+		var output_word = document.getElementById('output_word');
+
+
+		if (navigator.geolocation) {
+			navigator.geolocation.getCurrentPosition(success, error);
+		}else{
+			output_word.innerHTML = '<p>您的浏览器不支持</p>'
+		}
+
+		function success(position){
+	   		var latitude  = position.coords.latitude
+	    	var longitude = position.coords.longitude
+			output_word.innerHTML = '<p>Latitude维度： ' + latitude + '° <br>Longitude经度： ' + longitude + '°</p>';
+
+			var map = new BMap.Map("output_map");   //创建地图示例
+			var point = new BMap.Point(longitude, latitude);  // 设置中心点坐标
+			map.centerAndZoom(point, 18);   //地图初始化，同时设置地图展示级别
+
+			map.addControl(new BMap.NavigationControl());    
+			map.addControl(new BMap.ScaleControl());    
+			map.addControl(new BMap.OverviewMapControl());    
+			map.addControl(new BMap.MapTypeControl());  
+
+
+		}
+		function error() {
+    		output_word.innerHTML = "无法获取您的位置";
+  		};
+
+
+	})();
+
+	
+</script>
+
+
+
+
+</body>
+</html>

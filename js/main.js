@@ -76,55 +76,31 @@ window.onload = function(){
 
 	   // 地理位置调用成功函数
 		function successGeoData(position) {
-			var latitude = position.coords.latitude;
-			var longitude = position.coords.longitude;
-			successMessage += '<br> 维度Latitude = ' + latitude;
-			successMessage += '<br> 经度Longitude = ' + longitude;
-			successMessage += '<br> 精度Accuracy = ' + position.coords.accuracy + ' 米';
-			console.log(successMessage);	
-			locationUI.innerHTML = successMessage;			
-			
-			var map = new BMap.Map(locationMap); 
-			var point = new BMap.Point(120.38345, 30.30025); 
-			map.centerAndZoom(point, 15);  
+			var latitude  = position.coords.latitude
+	    	var longitude = position.coords.longitude
+			locationUI.innerHTML = '<p>Latitude维度： ' + latitude + '° Longitude经度： ' + longitude + '°</p>';
+
+			var map = new BMap.Map("locationMap");   //创建地图示例
+			var point = new BMap.Point(longitude, latitude);  // 设置中心点坐标
+			map.centerAndZoom(point, 18);   //地图初始化，同时设置地图展示级别
 		}
 
 	   // 地理位置调用失败函数
-		function failGeoData(error) {
-			console.log('error code = ' + error.code);			
-			switch(error.code) {
-				case error.POSITION_UNAVALABLE:
-					errorMessage = "定位失败,位置信息是不可用";
-					break;
-				case error.PERMISSION_DENIED:
-					errorMessage = "定位失败,用户拒绝请求地理定位";
-					break;
-				case error.TIMEOUT:
-					errorMessage = "定位失败,请求获取用户位置超时";
-					break;
-				case error.UNKNOWN_ERROR:
-					errorMessage = "定位失败,定位系统失效: " + error.code;
-					break;
-			}
-			console.log(errorMessage);
-			locationUI.innerHTML = errorMessage;				
+		function failGeoData() {		
 
-			var map = new BMap.Map(locationMap); 
-			var point = new BMap.Point(120.38345, 30.30025); 
-			map.centerAndZoom(point, 15);  
-			map.enableScrollWheelZoom(true); 
+			var map = new BMap.Map("locationMap");   //创建地图示例
+			var point = new BMap.Point(120.383779, 30.3000093);  // 设置中心点坐标
+			map.centerAndZoom(point, 15);   //地图初始化，同时设置地图展示级别
+			locationUI.innerHTML = '无法获取您的位置';				
 		}
 
 		if (navigator.geolocation) {
-			navigator.geolocation.watchPosition(successGeoData, failGeoData, {
-				maximumAge : 1000,
-				enableHighAccuracy : true,
-				timeout : 5000
-			});
-			
+			navigator.geolocation.getCurrentPosition(successGeoData, failGeoData);
 		} else {
 			console.log('您的浏览器不支持定位 geolocation :(');
 		}
+
+
 	})();
 
 	/*  ----------------Json---------------------  */
@@ -184,6 +160,83 @@ window.onload = function(){
 		loadDataHtml('data/countries.html', counriesList);
 		// 省份用Json格式
 		loadDataJson('data/states.json', 'stateslist', statesList);
+	})();
+
+	/* ---------  start // creating pie chart using HTML5 Canvas   -------------- */
+	(function() {
+
+		function drawPieChart (canvas, chartData, centerX, centerY, pieRadius) {
+			var ctx;  // The context of canvas
+			var previousStop = 0;  // The end position of the slice
+			var totalDonors = 0;
+			
+			var totalCities = chartData.items.length;
+			
+            // Count total donors
+			for (var i = 0; i < totalCities; i++) {
+					totalDonors += chartData.items[i].donors;
+			}
+
+			ctx = canvas.getContext("2d");
+			ctx.clearRect(0, 0, canvas.width, canvas.heigh);
+
+		    var colorScheme = ["#2F69BF", "#A2BF2F", "#BF5A2F", 
+		                       "#BFA22F", "#772FBF", "#2F94BF", "#c3d4db"];
+		                       
+			
+			for (var i = 0; i < totalCities; i++) {
+				
+				//draw the sector
+				ctx.fillStyle = colorScheme[i];
+				ctx.beginPath();
+				ctx.moveTo(centerX, centerY);
+				ctx.arc(centerX, centerY, pieRadius, previousStop, previousStop + 
+					(Math.PI * 2 * (chartData.items[i].donors / totalDonors)), false);
+				ctx.lineTo(centerX, centerY);
+				ctx.fill();
+				
+				// label's bullet
+				var labelY = 20 * i + 40;
+				var labelX = pieRadius*2 + 30;
+				
+				ctx.rect(labelX, labelY, 10, 10);
+				ctx.fillStyle = colorScheme[i];
+        		ctx.fill();
+        		
+        		// label's text
+				ctx.font = "italic 12px sans-serif";
+				ctx.fillStyle = "#222";
+				var txt = chartData.items[i].location + " | " + chartData.items[i].donors;
+				ctx.fillText (txt, labelX + 18, labelY + 8);
+				
+				previousStop += Math.PI * 2 * (chartData.items[i].donors / totalDonors);
+			}
+		}
+		
+			
+		function loadData(dataUrl, canvas) {
+			var xhr = new XMLHttpRequest();
+			xhr.open('GET', dataUrl, true);
+
+			xhr.onreadystatechange = function() {
+				if (xhr.readyState == 4) {
+                   if ((xhr.status >= 200 && xhr.status < 300) || 
+                                             xhr.status === 304) {
+						var jsonData = xhr.responseText;
+
+						var chartData = JSON.parse(jsonData).ChartData;
+
+						drawPieChart(canvas,chartData, 65, 100, 49);
+						
+					} else {
+						console.log(xhr.statusText);
+					}
+				}
+			}
+			xhr.send();
+		}
+	
+		loadData('data/chartdata.json', document.getElementById("canvas"));
 	})();
 
 

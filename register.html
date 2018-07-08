@@ -10,8 +10,13 @@
 	<link rel="stylesheet" type="text/css" href="assets/css/reset.css">
 	<link rel="stylesheet" type="text/css" href="assets/css/main.css">
 	<!-- <link rel="stylesheet" media="(max-width: 768px)" href="assets/css/phone.css"> -->
-    <script type="text/javascript" src="http://api.map.baidu.com/api?v=2.0&ak=gtWs9eeNGjWdGefOo4GGcepL0YVGvtFa"></script>
+<!--     <script type="text/javascript" src="http://api.map.baidu.com/api?v=2.0&ak=gtWs9eeNGjWdGefOo4GGcepL0YVGvtFa"></script>
     <script type="text/javascript" src="http://api.map.baidu.com/api?v=2.0&ak=	F41bed5ad415981d0a0c8ba802cb9417"></script>
+
+	<script src="http://api.map.baidu.com/api?v=1.4" type="text/javascript"></script> -->
+
+	<!-- <script type="text/javascript" src="http://api.map.baidu.com/api?v=2.0&ak=	F41bed5ad415981d0a0c8ba802cb9417"></script> -->
+	<script src="http://api.map.baidu.com/api?v=1.4" type="text/javascript"></script>
 
 	<style type="text/css">
 
@@ -162,13 +167,24 @@
 					</video>
 					<h3>请点击视频<a href="javascript:void(0);">更多</a></h3>
 				</div>
+				<!-- end vedio视频 -->
 
 				<div id="map-container">
 					<div id="location-map">地图正在努力加载中ing</div>
 					<div id="location-ui"></div>
 				</div>
+				<!-- end map地理位置 -->
+
+				<div id="charts-container">
+					<canvas id="canvas" width="250" height="228">
+						您的浏览器不支持cavas画布
+					</canvas>
+					<h3>各省打赏比例<a href="javascript:void(0);">更多</a></h3>
+				</div>
+				<!-- end canvas画布饼图 -->
+
 			</section>
-			<!-- end .搜索地图 -->
+			<!-- end .饼图地图和视频 -->
 		</section>
 		<!-- end #main主区域 -->
 		<footer id="footer">
@@ -179,6 +195,6 @@
 
 	<!-- 在线引用阿里Symbol图标 -->
 	<script src="https://at.alicdn.com/t/font_587077_emll0icgpp4.js"></script>
-	<script type="text/javascript" src="js/main.js"></script>
 	<script type="text/javascript" src="js/modernizr-3.5.0.min.js"></script>
+	<script type="text/javascript" src="js/main.js"></script>
 </html>

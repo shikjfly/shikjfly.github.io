@@ -1,0 +1,34 @@
+{
+  "ChartData": {
+    "items": [
+      {
+        "donors": 48,
+        "location":"西藏"
+      },
+      {
+        "donors": 60,
+        "location": "浙江"
+      },
+      {
+        "donors": 90,
+        "location":"广东"
+      },
+      {
+        "donors": 22,
+        "location":"上海"
+      },
+      {
+        "donors": 14,
+        "location":"新疆"
+      },
+      {
+        "donors": 44,
+        "location":"河南"
+      },
+      {
+        "donors": 24,
+        "location":"重庆"
+      }
+    ]
+  }
+}
